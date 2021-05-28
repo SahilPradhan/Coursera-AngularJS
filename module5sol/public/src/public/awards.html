@@ -1,0 +1,68 @@
+<div id="awards-view" class="container" ng-controller="UserInfoController as UserInfoCtrl">
+  <h2 class="text-center">Sign Up!</h2>
+
+  <!-- <p>David Chu's China Bistro is a recepient of multiple awards for its great food and service.</p>
+  <p>Details are coming soon.</p> -->
+
+  <form name='regForm' novalidate>
+  	
+  	First Name : <input type="text" name="firstname"
+          ng-model="reg.user.firstname"
+          required ng-model='fname' style="color: black;">
+          <!-- {{ reg.user.firstname }} -->
+         <!--  {{ UserInfoCtrl.fname }} -->
+          <span
+            ng-if="(regForm.firstname.$error.required) && regForm.firstname.$touched">
+            Firstname is required.
+          </span>
+          <br>
+          <br>
+          <br>
+
+    Last Name : <input type="text" name="lastname"
+          ng-model="reg.user.lastname"
+          required  style="color: black;">
+          <!-- {{ reg.user.lastname }} -->
+          <span
+            ng-if="(regForm.lastname.$error.required) && regForm.lastname.$touched">
+            Lastname is required.
+          </span>
+          <br>
+          <br>
+          <br>
+
+    Email : <input type="email" name="email"
+          ng-model="reg.user.email"
+          required  style="color: black;">
+          <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+            Must be a valid email address: handle@domain format
+          </span>
+          <br>
+          <br>
+          <br>
+
+    Favourite Dish : <input type="text" name="favouritedish" placeholder="Enter menu-number"
+    ng-model="reg.user.favouritedish"
+    required  style="color: black;">
+  <!--   {{ reg.user.favouritedish }} -->
+   	<span
+            ng-if="(regForm.favouritedish.$error.required) && regForm.favouritedish.$touched">
+            Menu-Number is required.
+          </span>
+          <br> 
+          <br>
+          <br>
+
+    <button
+          ng-disabled="regForm.$invalid"
+          ng-click="UserInfoCtrl.saveinfo(reg.user.firstname, reg.user.lastname, reg.user.email, reg.user.favouritedish);" style="color: red;">Submit</button>
+
+          <!-- <div style="margin-top: 10px;">
+            Form valid? {{ regForm.$valid }}
+          </div> -->
+
+  </form>
+
+
+
+</div>

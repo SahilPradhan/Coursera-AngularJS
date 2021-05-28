@@ -1,0 +1,17 @@
+<html ng-app='CounterApp'>
+<head>
+	<title>Assignment-1</title>
+	<script src="angular.min.js"></script>
+	<script src="app.js"></script>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+	<div ng-controller='Counter'>
+		<h1>What did you have for lunch ?</h1>
+		<input type="text" name="fooditems" ng-model='my_food'>
+		<br><br>
+		<button ng-click='countFood()'>Click Me!</button><br><br> 
+		{{message}}
+	</div>
+</body>
+</html>

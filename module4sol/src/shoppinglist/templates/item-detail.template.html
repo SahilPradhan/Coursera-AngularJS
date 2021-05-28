@@ -1,0 +1,13 @@
+<!-- <div>Item name: {{ itemDetail.name }}</div> -->
+<!-- <div>Item quantity: {{ itemDetail.quantity }}</div>
+<div>Item description: {{ itemDetail.description }}</div> -->
+
+------------------------------------------------------------------
+	<ol>
+		<li ng-repeat="i in itemDetail.newarray">
+    		Name : {{ i.name }} -> {{ i.description }}. Small price :{{ i.price_small }}/- Large price :{{ i.price_large }}//-
+
+    		
+
+		</li>
+	</ol>

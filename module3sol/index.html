@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app='MenuCategoriesApp'>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Narrow It Down For Me!</title>
+  </head>
+  <body>
+    <h1>Narrow Down Your Chinese Menu Choice</h1>
+
+    <div ng-controller='MenuCategoriesController as menu'>
+      <div class="form-group">
+      <input type="text" placeholder="search term" class="form-control" ng-model='input_string'>
+    </div>
+      <div class="form-group narrow-button">
+        <button class="btn btn-primary" ng-click='menu.logMenuItems();'>Narrow It Down For Me!</button>
+      </div>
+      <div ng-hide="menu.items.length" style="color: red;">
+          Nothing found.
+      </div>
+      <ul>
+        <li ng-repeat="category in menu.items">
+          <found-list></found-list>
+          <button class="btn btn-primary" ng-click='menu.removeItem($index)'>Don't want this one!</button>
+        </li>
+      </ul>
+    </div>
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
